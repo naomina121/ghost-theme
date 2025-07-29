@@ -1,0 +1,14 @@
+{{#if pagination.pages}}
+  <div class='flex justify-center mt-8'>
+    <nav
+      class='sm-pagination flex space-x-2'
+      data-pages='{{pages}}'
+      data-page='{{page}}'
+      data-prev='{{page_url prev}}'
+      data-next='{{page_url next}}'
+    >
+    </nav>
+  </div>
+{{else}}
+  <div class='sm-pagination-holder'></div>
+{{/if}}

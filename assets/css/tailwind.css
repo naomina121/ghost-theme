@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* カスタムコンポーネント */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden;
+  }
+
+  .container-custom {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}

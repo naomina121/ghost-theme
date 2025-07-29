@@ -1,0 +1,127 @@
+<header>
+  <nav class='bg-gray-800 p-4 relative'>
+    <div class='flex justify-between items-center max-w-6xl px-4 mx-auto'>
+      <!-- ハンバーガーメニューボタン（モバイル用） -->
+      <button
+        id='hamburger-button'
+        class='hamburger md:hidden'
+        aria-label='メニューを開く'
+        aria-expanded='false'
+        aria-controls='mobile-navigation'
+        onclick='toggleMobileMenu()'
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- デスクトップメニュー -->
+      <ul class='desktop-menu justify-between items-center flex-1'>
+        <div class='flex space-x-6'>
+          <li>
+            <a
+              href='/'
+              class='text-white hover:text-gray-300 transition'
+            >ホーム</a>
+          </li>
+          <li>
+            <a
+              href='/about/'
+              class='text-white hover:text-gray-300 transition'
+            >ナオについて</a>
+          </li>
+          <li>
+            <a
+              href='/links/'
+              class='text-white hover:text-gray-300 transition'
+            >リンク集</a>
+          </li>
+          <li>
+            <a
+              href='/privacy/'
+              class='text-white hover:text-gray-300 transition'
+            >プライバシーポリシー</a>
+          </li>
+        </div>
+        <div class='flex items-center space-x-4'>
+          <div
+            class='block h-12 rounded-lg px-6 text-neutral-50 transition hover:opacity-80 flex contact-button'
+            style='background-color: var(--contact-bg)'
+          >
+            <a
+              href='/contact/'
+              style='color: var(--text-contact)'
+              class='my-auto font-bold'
+            >お問い合わせ</a>
+          </div>
+          <button
+            id='theme-toggle'
+            class='px-2 py-2 border rounded-md transition'
+            onclick='toggleTheme()'
+            aria-label='テーマを切り替え'
+          >
+            🌙
+          </button>
+          <button
+            class='px-2 py-2 border rounded-md gh-search'
+            data-ghost-search
+          >🔎</button>
+
+        </div>
+      </ul>
+
+      <!-- モバイル用の右側要素 -->
+      <div class='md:hidden flex items-center space-x-4'>
+        <div
+          class='block h-10 font-bold rounded-lg px-4 text-neutral-50 transition flex hover:bg-green-900 contact-button'
+          style='background-color: var(--contact-bg)'
+        >
+          <a
+            href='/contact/'
+            style='color: var(--text-contact)'
+            class='my-auto text-sm'
+          >お問い合わせ</a>
+        </div>
+        <button
+          id='theme-toggle2'
+          class='px-2 py-2 border rounded-md transition'
+          onclick='toggleTheme()'
+          aria-label='テーマを切り替え'
+        >
+          🌙
+        </button>
+        <button
+          class='gh-search px-2 py-2 border rounded-md'
+          data-ghost-search
+        >🔎</button>
+
+      </div>
+    </div>
+
+    <!-- モバイルメニュー -->
+    <div
+      id='mobile-navigation'
+      class='mobile-menu'
+      role='navigation'
+      aria-label='メインナビゲーション'
+    >
+      <ul>
+        <li>
+          <a href='/' onclick='closeMobileMenu()'>ホーム</a>
+        </li>
+        <li>
+          <a href='/about/' onclick='closeMobileMenu()'>ナオについて</a>
+        </li>
+        <li>
+          <a href='links/' onclick='closeMobileMenu()'>リンク集</a>
+        </li>
+        <li>
+          <a
+            href='/privacy/'
+            onclick='closeMobileMenu()'
+          >プライバシーポリシー</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

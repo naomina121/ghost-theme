@@ -1,0 +1,18 @@
+{{!< default}}
+{{#post}}
+  <div class='mt-8 max-w-4xl mx-auto px-4 py-12'>
+    <div class='text-center mb-12'>
+      <h1 class='text-3xl md:text-4xl font-bold mb-4'>{{title}}</h1>
+    </div>
+    <article
+      class='post-content prose prose-lg max-w-none p-8'
+      style='
+                background-color: var(--card-bg);
+                border-color: var(--border-color);
+                color: var(--text-primary);
+              '
+    >
+      {{content}}
+    </article>
+  </div>
+{{/post}}

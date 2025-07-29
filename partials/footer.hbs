@@ -1,0 +1,191 @@
+<!-- news letter -->
+<div class='mt-24 bg-gray-800 text-white py-8'>
+  <div class='max-w-6xl mx-auto px-4'>
+    {{#if @member}}
+      <h2 class='text-2xl text-center font-bold mb-4'>ようこそ！</h2>
+      <p class='mb-6 text-center'>会員限定のコンテンツを お楽しみください。</p>
+      <a
+        href='/#/portal/account'
+        class='block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 max-w-xs mx-auto rounded-lg transition-colors duration-200 mb-4'
+      >
+        アカウント情報
+      </a>
+      <a
+        href='#/portal/account/newsletters'
+        class='block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 max-w-xs mx-auto rounded-lg transition-colors duration-200 mb-4'
+      >
+        ニュースレター設定
+      </a>
+    {{else}}
+      <h2
+        class='text-2xl text-center font-bold mb-4'
+      >ニュースレター購読始めましょう！限定記事を紹介します！</h2>
+      <p
+        class='mb-6 text-center'
+      >無料で読めるメンタルヘルス＆情報リテラシーのTips！登録して最新情報をゲットしましょう！</p>
+      <!-- Ghostの会員登録フォーム -->
+      <form
+        class='max-w-md mx-auto flex flex-col md:flex-row gap-4'
+        data-members-form='signup'
+      >
+        <input
+          type='email'
+          name='email'
+          data-members-email
+          placeholder='メールアドレスを入力'
+          class='flex-grow p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500'
+          required
+        />
+        <input
+          data-members-label
+          type='hidden'
+          value='Turntable buying guide'
+        />
+        <button
+          type='submit'
+          class='bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200'
+        >登録</button>
+      </form>
+      <small class='text-center w-100% block mt-6 max-x:auto'>
+        すでにアカウントをお持ちですか？<a
+          href='/#/portal/signin'
+          class='text-blue-400 hover:text-blue-600'
+        >ログインはこちら</a>
+      </small>
+      <!-- 成功・エラーメッセージ表示用 -->
+      <div
+        class='message-success text-center mt-4 text-green-400'
+        style='display: none;'
+      >
+        登録が完了しました！確認メールをご確認ください。
+      </div>
+      <div
+        class='message-error text-center mt-4 text-red-400'
+        style='display: none;'
+      >
+        エラーが発生しました。もう一度お試しください。
+      </div>
+
+      <small class='text-center w-100% block mt-6 max-x:auto'>
+        メールアドレスは安全に保護され、スパムメールは送信しません。
+        <br />
+        <a
+          href='/privacy/'
+          class='text-blue-400 hover:text-blue-600'
+        >プライバシーポリシー</a>
+        に同意の上、登録をお願いします。
+      </small>
+    {{/if}}
+  </div>
+</div>
+
+<footer class='bg-gray-900 text-gray-300'>
+  <div class='max-w-6xl mx-auto px-4 py-8'>
+    <!-- フッターナビゲーション -->
+    <div class='border-b border-gray-700 pb-8 mb-8'>
+      <nav>
+        <ul
+          class='text-center grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-sm'
+        >
+          <li>
+            <a
+              href='/'
+              class='text-gray-300 hover:text-white transition-colors'
+            >
+              ホーム
+            </a>
+          </li>
+          <li>
+            <a
+              href='/about/'
+              class='text-gray-300 hover:text-white transition-colors'
+            >
+              ナオについて
+            </a>
+          </li>
+          <li>
+            <a
+              href='/privacy/'
+              class='text-gray-300 hover:text-white transition-colors'
+            >
+              お問い合わせ
+            </a>
+          </li>
+          <li>
+            <a
+              href='/privacy/'
+              class='text-gray-400 hover:text-gray-300 transition-colors text-xs'
+            >
+              プライバシーポリシー
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- サイト情報とSNSアイコン -->
+    <div class='flex flex-col md:flex-row justify-between items-center mb-8'>
+      <div class='mb-4 md:mb-0'>
+        <h2 class='text-2xl font-bold text-white font-sans'>
+          {{@site.title}}
+        </h2>
+        <p class='text-sm text-gray-400 mt-1'>
+          {{@site.description}}
+        </p>
+      </div>
+
+      <!-- SNSアイコン -->
+      <div class='flex space-x-3'>
+        <a
+          href='https://x.com/naomina121/'
+          target='_blank'
+          class='flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full text-gray-300 hover:text-white hover:bg-gray-600 transition-all duration-200'
+          aria-label='Twitter/X'
+        >
+          <svg class='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
+            <path
+              d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'
+            />
+          </svg>
+        </a>
+        <a
+          href='https://github.com/naomina121/'
+          target='_blank'
+          class='flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full text-gray-300 hover:text-white hover:bg-gray-600 transition-all duration-200'
+          aria-label='GitHub'
+        >
+          <svg class='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
+            <path
+              d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'
+            />
+          </svg>
+        </a>
+        <a
+          href='/rss/'
+          target='_blank'
+          class='flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full text-gray-300 hover:text-white hover:bg-gray-600 transition-all duration-200'
+          aria-label='RSS Feed'
+        >
+          <svg class='w-5 h-5' fill='currentColor' viewBox='0 0 24 24'>
+            <path
+              d='M3.429 2.486c9.36 0 16.971 7.611 16.971 16.97h-3.343c0-7.536-6.092-13.627-13.628-13.627v-3.343z'
+            />
+            <path
+              d='M3.429 9.829c3.684 0 6.657 2.973 6.657 6.657h-3.343c0-1.84-1.474-3.314-3.314-3.314v-3.343z'
+            />
+            <circle cx='5.571' cy='18.686' r='2.571' />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- コピーライト -->
+    <div class='text-center pt-8 border-t border-gray-700'>
+      <small class='text-gray-400 text-sm'>
+        © 2025
+        {{@site.title}}
+        All rights reserved.
+      </small>
+    </div>
+  </div>
+</footer>

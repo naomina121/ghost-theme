@@ -1,0 +1,79 @@
+{
+  "name": "ghost-theme",
+  "description": "Custom Ghost theme with Tailwind CSS",
+  "version": "1.0.0",
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "author": {
+    "name": "ナオ",
+    "email": "contact@naomina121.com"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Blog"
+    ]
+  },
+  "config": {
+    "posts_per_page": 5,
+    "image_sizes": {
+      "xs": {
+        "width": 150
+      },
+      "s": {
+        "width": 400
+      },
+      "m": {
+        "width": 750
+      },
+      "l": {
+        "width": 960
+      },
+      "xl": {
+        "width": 1200
+      }
+    }
+  },
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "bestzip": "^2.2.1",
+    "cross-env": "^7.0.3",
+    "cssnano": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "nodemon": "^2.0.22",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "rimraf": "^5.0.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "scripts": {
+    "build": "postcss assets/css/tailwind.css -o assets/built/main.css",
+    "dev:all": "npm-run-all --parallel dev:css dev:theme",
+    "dev:css": "postcss assets/css/tailwind.css -o assets/built/main.css --watch",
+    "dev:theme": "nodemon --watch . --ext hbs --ignore assets/built --ignore node_modules --exec \"echo 'Theme files changed'\"",
+    "build:prod": "cross-env NODE_ENV=production postcss assets/css/tailwind.css -o assets/built/main.css --env production",
+    "clean": "rimraf assets/built/*",
+    "zip": "npm run clean && npm run build:prod && bestzip ghost-theme.zip . -x node_modules/** .git/** *.log",
+    "lint": "eslint . --ext .js --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .js --ignore-path .gitignore --fix"
+  },
+  "dependencies": {
+    "glimmer": "^1.1.5",
+    "prettier": "^3.6.2",
+    "tocbot": "^4.36.4"
+  },
+  "license": "MIT"
+}
