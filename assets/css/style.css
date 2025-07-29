@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 @font-face {
   font-family: 'Noto Sans JP';
   font-weight: 400;
