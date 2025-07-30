@@ -69,6 +69,17 @@ header {
   color: var(--accent-color);
 }
 
+details[open] summary::after {
+  content: '◀';
+  float: right;
+  color: var(--text-secondary);
+}
+summary::after {
+  content: '▼';
+  float: right;
+  color: var(--text-secondary);
+}
+
 .post-content pre {
   margin: 1.5rem 0;
   line-height: 1.6;
