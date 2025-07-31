@@ -137,11 +137,11 @@ toggleButton2.addEventListener('click', () => {
 
 // ページネーションのリンクを生成する関数
 function pathnameParser(pathname) {
-  if (!/page/.test(pathname)) {
+  if (!/blog/.test(pathname)) {
     return pathname
   }
 
-  return pathname.split('page')[0]
+  return pathname.split('blog')[0]
 }
 
 // ページネーションのナビゲーションボタンを生成する関数
