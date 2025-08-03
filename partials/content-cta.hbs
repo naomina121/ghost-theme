@@ -1,0 +1,42 @@
+<aside class='gh-post-upgrade-cta'>
+  <div
+    class='gh-post-upgrade-cta-content'
+    style='background-color:var(--bg-primary); color:var(--text-primary);'
+  >
+    {{#has visibility='paid'}}
+      <h2 style="color:var(--text-primary);">{{#is
+          'page'
+        }}このページは有料会員限定です{{else}}この記事は有料会員限定です{{/is}}</h2>
+    {{/has}}
+    {{#has visibility='members'}}
+      <h2 style="color:var(--text-primary);">{{#is
+          'page'
+        }}このページは会員限定です{{else}}この記事は会員限定です{{/is}}</h2>
+    {{/has}}
+    {{#has visibility='tiers'}}
+      <h2 style="color:var(--text-primary);">{{#is
+          'page'
+        }}このページは指定ティア会員限定です{{else}}この記事は指定ティア会員限定です{{/is}}</h2>
+    {{/has}}
+    {{#if @member}}
+      <a
+        class='gh-btn'
+        data-portal='account/plans'
+        href='#/portal/account/plans'
+        style='color:var(--button-text-color); background-color:var(--button-background-color);'}'
+      >プランを変更する</a>
+    {{else}}
+      <a
+        class='gh-btn'
+        data-portal='signin'
+        href='#/portal/signin'
+        style='background-color:var(--bg-contact); border-color:var(--bg-contact); border:1px solid;'
+      >今すぐ登録</a>
+      <p><small>既にアカウントをお持ちですか？
+          <a
+            data-portal='signin'
+            href='#/portal/signin'
+          >ログイン</a></small></p>
+    {{/if}}
+  </div>
+</aside>
