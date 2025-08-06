@@ -215,10 +215,15 @@ body {
 
 .post-content h3 {
   font-size: 1.2rem;
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
   color: var(--text-secondary);
   border-left: 6px solid var(--contact-bg);
   padding-left: 6px;
+}
+
+.post-content p {
+  line-height: 1.5;
+  margin: 20px 0;
 }
 
 .post-content strong {
