@@ -146,7 +146,24 @@
           </div>
         </div>
       </div>
+      <div class='mt-8'>
+        <h2
+          class='text-2xl font-bold mb-4'
+        >この記事に感想や質問がある場合、コメント欄にて受付しております。</h2>
+        {{#if @member}}{{else}}
+          <p class='p-4'>
+            コメントをご利用いただくには、<a
+              href='/#/portal/'
+            >読者登録</a>が必要です。</p>
+          </p>
+          <p class='p-4'>登録をする際、<a
+              href='/privacy'
+            >プライバシーポリシー</a>をご確認の上、登録お願いいたします。</p>
+        {{/if}}
 
+        {{ghost_comments}}
+
+      </div>
       <!-- 関連記事セクション -->
       <section class='mt-16'>
         <h2 class='text-2xl font-bold mb-8'>関連記事</h2>
