@@ -137,6 +137,9 @@ summary::after {
 body {
   margin-top: 80px;
   font-family: 'Noto Sans JP';
+  overflow-wrap: anywhere; /* 収まらない場合に折り返す */
+  word-break: normal; /* 単語の分割はデフォルトに依存 */
+  line-break: strict; /* 禁則処理を厳格に適用 */
 }
 
 .post-content th {
@@ -172,6 +175,12 @@ body {
   color: var(--text-secondary);
   border-left: 6px solid var(--contact-bg);
   padding-left: 6px;
+}
+
+.post-content h4 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
 }
 
 .post-content .green {
