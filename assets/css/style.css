@@ -17,8 +17,11 @@
   font-weight: 700;
   src: url(./NotoSansJP-Bold.otf);
 }
-
 :root {
+  --text-error: #e57373;
+  --text-muted: #aaa;
+  --link-hover: #66ccff;
+  --input-bg: #f5f5f5;
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --text-primary: #1f2937;
