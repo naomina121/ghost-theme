@@ -1,0 +1,12 @@
+{{!< default}}
+{{#author}}
+<div class='max-w-6xl mx-auto px-4 py-8'>
+  <section class='mt-12 mb-12 text-center'>
+  	<h1 class='text-3xl md:text-4xl font-bold mb-6'>{{name}}</h1>
+    {{#if bio}}<h2 class="author-bio">{{bio}}</h2>{{/if}}
+
+    <div class="author-meta">
+      {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+     </div>
+  </section>
+{{/author}}
