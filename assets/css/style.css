@@ -408,7 +408,7 @@ body {
 }
 
 /* デスクトップでは通常のメニューを表示 */
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .hamburger {
     display: none;
   }
@@ -420,10 +420,13 @@ body {
   .mobile-menu {
     display: none;
   }
+  .right-hamburger {
+    display: none;
+  }
 }
 
 /* モバイルでは通常のメニューを非表示 */
-@media (max-width: 767px) {
+@media (max-width: 1279px) {
   .desktop-menu {
     display: none;
   }

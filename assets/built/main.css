@@ -1803,6 +1803,10 @@ video {
     display: block;
   }
 
+  .lg\:hidden {
+    display: none;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1813,6 +1817,12 @@ video {
 
   .lg\:p-16 {
     padding: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+
+  .xl\:hidden {
+    display: none;
   }
 }
 @media (prefers-color-scheme: dark) {
