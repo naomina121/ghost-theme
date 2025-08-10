@@ -77,6 +77,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
 
     <script>
+const headings = document.querySelectorAll('.gh-toc h2, .gh-toc h3');
+const tooLong = headings.length > 40 || document.body.scrollHeight > 30000;
+
+if (tooLong) {
+  tocbot.init({
+    tocSelector: '.js-toc',
+    contentSelector: '.js-toc-content',
+    headingSelector: 'h2',
+    scrollSmoothOffset: -60,
+    headingsOffset: 60,
+    throttleTimeout: 40
+  });
+} else {
+  // 通常
+  tocbot.init({
+    tocSelector: '.gh-toc',
+    contentSelector: '.post-content',
+    headingSelector: 'h2, h3',
+    hasInnerContainers: true,
+    scrollSmoothOffset: -60, // ヘッダーの高さを考慮
+    headingsOffset: 60,
+    throttleTimeout: 40,
+    scrollSmooth: true,
+  });
+} else {
+  // 通常
+  tocbot.init({ /* 上と同様 */ });
+}
+
+
+
+
       tocbot.init({
         tocSelector: '.gh-toc',
         contentSelector: '.post-content',
