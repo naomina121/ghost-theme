@@ -75,12 +75,12 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.3/tocbot.min.js"></script>
-
     <script>
-const headings = document.querySelectorAll('.post-content h2,.post-content h3');
-const tooLong = headings.length > 40 || document.body.scrollHeight > 30000;
+const headers = document.body.querySelectorAll('.post-content h2,.post-content h3');
+const tooLong = headers.length > 40 || document.body.scrollHeight > 30000;
 
 if (tooLong) {
+  console.log('長すぎるコンテンツが検出されました。');
   tocbot.init({
     tocSelector: '.gh-toc',
     contentSelector: '.post-content',
@@ -88,8 +88,18 @@ if (tooLong) {
     scrollSmoothOffset: -60,
     headingsOffset: 60,
     throttleTimeout: 40
-  });
+  }),
+    tocbot.init({
+    tocSelector: '.toc-list',
+    contentSelector: '.post-content',
+    headingSelector: 'h2, h3',
+    hasInnerContainers: true,
+        scrollSmoothOffset: -60, // ヘッダーの高さを考慮
+        scrollSmooth: true,
+        scrollSmoothDuration: 300
+      });
 } else {
+  console.log('通常のコンテンツが検出されました。');
   tocbot.init({
     tocSelector: '.gh-toc',
     contentSelector: '.post-content',
@@ -99,17 +109,17 @@ if (tooLong) {
     headingsOffset: 60,
     throttleTimeout: 40,
     scrollSmooth: true,
-  });
-}
-  tocbot.init({
+  }),
+    tocbot.init({
     tocSelector: '.toc-list',
     contentSelector: '.post-content',
     headingSelector: 'h2, h3',
     hasInnerContainers: true,
-        scrollSmoothOffset: -60, // ヘッダーの高さを考慮
-        scrollSmooth: true,
-        scrollSmoothDuration: 300
+    scrollSmoothOffset: -60, // ヘッダーの高さを考慮
+    scrollSmooth: true,
+    scrollSmoothDuration: 300
       });
+}
     </script>
     {{/if}}
     {{ghost_foot}}
