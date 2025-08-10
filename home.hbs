@@ -178,4 +178,75 @@
       </div>
     </section>
   </div>
+
+<div>
+    {{!-- メインコンテンツ (左側) --}}
+    <section class="lg:col-span-2 space-y-6">
+      {{!-- タイトルと説明 --}}
+        <h3 class="text-2xl font-bold mb-4" style="color: var(--text-primary)">
+          最新の記事
+        </h3>
+
+      {{!-- 記事一覧 --}}
+      {{!-- posts_per_pageの設定に基づいて表示 --}}
+      {{#if @config.posts_per_page}}
+        <p class="text-sm mb-4" style="color: var(--text-secondary)">
+          最新の{{@config.posts_per_page}}件の記事を表示しています。
+        </p>
+      {{/if}}
+
+      {{#if posts}}
+      {{#foreach posts limit=@config.posts_per_page}}
+        <article
+            class="card border rounded-lg p-6 shadow-sm transition-all duration-200 hover:shadow-md"
+        >
+            <div class="flex flex-col space-y-4">
+                <h2 class="text-xl font-semibold">
+                    <a
+                    href="{{url}}"
+                    class="hover:underline"
+                    style="color: var(--accent-color)"
+                    >
+                    {{title}}</a>
+                </h2>
+                {{#if custom_excerpt}}
+                <p
+                    class="text-description leading-relaxed"
+                    style="color: var(--text-secondary)"
+                >
+                    {{custom_excerpt}}
+                </p>
+                {{else}}
+                            <p
+                    class="text-description leading-relaxed"
+                    style="color: var(--text-secondary)"
+                >
+                    {{excerpt words="30"}}
+                </p>
+                {{/if}}
+                <div
+                    class="flex flex-wrap items-center justify-between text-sm"
+                    style="color: var(--text-secondary)"
+                >
+                    <div class="flex gap-2 mt-2 lg:mt-0">
+                    <span>作成日: <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span> </div>
+                    <div class="flex gap-2 mt-2 lg:mt-0">
+                        {{#foreach tags}}
+                        <a style="background-color: var(--bg-secondary); color: var(--text-secondary);" href="{{url}}" class="px-2 py-1 rounded-lg text-xs">
+                            {{name}}
+                        </a>
+                        {{else}}
+                        <span class="text-xs text-gray-500">タグなし</span>
+                        {{/foreach}}
+                    </div>
+                </div>
+            </div>
+        </article>
+         {{/foreach}}
+      </section>
+    {{/if}}
+  </div>
+
+
+
 </div>

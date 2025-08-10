@@ -1213,6 +1213,9 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
+.mb-36 {
+  margin-bottom: 9rem;
+}
 .block {
   display: block;
 }
