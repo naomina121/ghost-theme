@@ -43,7 +43,7 @@
         style='color: var(--text-primary)'
       >ようこそ、訪問ありがとうございます！</h2>
       <div
-        class='mb text-sm sm:text-base md:text-lg leading-relaxed sm:leading-loose'
+        class='mb-6 text-sm sm:text-base md:text-lg leading-relaxed sm:leading-loose'
         style='color: var(--text-primary)'
       >
         <p class='mb-3 sm:mb-4'>こんにちは、<strong>私です</strong>。</p>
@@ -225,7 +225,7 @@
                     style="color: var(--text-secondary)"
                 >
                     <div class="flex gap-2 mt-2 lg:mt-0">
-                    <span>作成日: <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span> </div>
+                    <span>作成日: <time datetime="{{date format='YYYY-MM-DD'}}">{{date}}</time></span> </div>
                     <div class="flex gap-2 mt-2 lg:mt-0">
                         {{#foreach tags}}
                         <a style="background-color: var(--bg-secondary); color: var(--text-secondary);" href="{{url}}" class="px-2 py-1 rounded-lg text-xs">
@@ -239,10 +239,10 @@
             </div>
         </article>
          {{/foreach}}
-      </section>
         {{!-- Pagination --}}
         {{pagination}}
     {{/if}}
+          </section>
   </div>
 </div>
 
@@ -329,9 +329,10 @@
             <p class="text-gray-600">Check back later for updates!</p>
         </div>
     {{/if}}
-  </div>
-    {{! Sidebar (右側) }}
+        {{! Sidebar (右側) }}
     {{> sidebar }}
-</div></div>
+  </div>
+
+</div>
 
 {{/is}}
