@@ -3,9 +3,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{!-- もじ、Authorページだったら --}}
-    {{#is author}}
+    {{#if @page.author}}
     <meta name="robots" content="noindex, follow">
-    {{/is}}
+    {{/if}}
 
     {{!-- CSS --}}
 {{#if post}}
