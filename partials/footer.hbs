@@ -1,85 +1,20 @@
 <!-- news letter -->
 <div class='mt-12 sm:mt-6 bg-gray-800 text-white py-8'>
   <div class='max-w-6xl mx-auto px-4'>
-    {{#if @member}}
-      <h2 class='text-2xl text-center font-bold mb-4'>ようこそ！
-        ナオの限定コラムへ</h2>
-      <p class='mb-6 text-center'>会員限定のコンテンツを お楽しみください。</p>
-      <a
-        href='/#/portal/account'
-        class='block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 max-w-xs mx-auto rounded-lg transition-colors duration-200 mb-4'
-      >
-        アカウント情報
-      </a>
-      <a
-        href='#/portal/account/newsletters'
-        class='block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 max-w-xs mx-auto rounded-lg transition-colors duration-200 mb-4'
-      >
-        ニュースレター設定
-      </a>
-    {{else}}
-      <h2
-        class='text-2xl text-center font-bold mb-4'
-      >ニュースレターで更新を追いたい方へ</h2>
-      <p class='mb-6 text-center'>
-        ナオのブログ更新を「通知で知りたい」という方向けの登録フォームです。<br
-        />
-        ※登録してもしなくても、すべての記事は無料でご覧いただけます。<br />
-        ※限定コンテンツなどは配信していませんのでご安心ください。
-      </p>
-      <!-- Ghostの会員登録フォーム -->
-      <form
-        class='max-w-md mx-auto flex flex-col md:flex-row gap-4'
-        data-members-form='signup'
-      >
-        <input
-          type='email'
-          name='email'
-          data-members-email
-          placeholder='メールアドレスを入力'
-          class='flex-grow p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500'
-          required
-        />
-        <input
-          data-members-label
-          type='hidden'
-          value='Turntable buying guide'
-        />
-        <button
-          type='submit'
-          class='bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200'
-        >登録</button>
-      </form>
-      <small class='text-center w-100% block mt-6 max-x:auto'>
-        すでにアカウントをお持ちですか？<a
-          href='/#/portal/signin'
-          class='text-yellow-400 hover:text-yellow-600'
-        >ログインはこちら</a>
-      </small>
-      <!-- 成功・エラーメッセージ表示用 -->
-      <div
-        class='message-success text-center mt-4 text-green-400'
-        style='display: none;'
-      >
-        登録が完了しました！確認メールをご確認ください。
-      </div>
-      <div
-        class='message-error text-center mt-4 text-red-400'
-        style='display: none;'
-      >
-        エラーが発生しました。もう一度お試しください。
-      </div>
-
-      <small class='text-center w-100% block mt-6 max-x:auto'>
-        メールアドレスは安全に保護され、スパムメールは送信しません。
-        <br />
-        <a
-          href='/privacy/'
-          class='text-yellow-400 hover:text-yellow-600'
-        >プライバシーポリシー</a>
-        に同意の上、登録をお願いします。
-      </small>
-    {{/if}}
+    <h2 class='text-2xl text-center font-bold mb-4'>免責事項
+    </h2>
+    <p
+      class='mb-6 text-center'
+    >当サイトのコンテンツは、著者の体験・調査・執筆に基づくものですが、一部の文章構成・表現においてAI編集ツールの支援を受けている場合があります。</p>
+    <p
+      class='mb-6 text-center'
+    >また、外部情報や公開資料を参考にした上で、独自に編集・リライトした内容を含む場合があります。</p>
+    <p
+      class='mb-6 text-center'
+    >記載された情報の正確性・完全性については保証いたしかねます。内容の利用はご自身の判断と責任でお願いいたします。</p>
+    <p
+      class='mb-6 text-center'
+    >当サイトは医療・法律・その他の専門的助言の提供を目的としたものではなく、重要な意思決定を行う場合は必ず専門家にご相談ください。</p>
   </div>
 </div>
 
