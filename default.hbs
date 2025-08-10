@@ -90,7 +90,6 @@ if (tooLong) {
     throttleTimeout: 40
   });
 } else {
-  // 通常
   tocbot.init({
     tocSelector: '.gh-toc',
     contentSelector: '.post-content',
@@ -102,24 +101,11 @@ if (tooLong) {
     scrollSmooth: true,
   });
 }
-
-
-
-
-      tocbot.init({
-        tocSelector: '.gh-toc',
-        contentSelector: '.post-content',
-        headingSelector: 'h2, h3',
-        hasInnerContainers: true,
-        scrollSmoothOffset: -60, // ヘッダーの高さを考慮
-        scrollSmooth: true,
-        scrollSmoothDuration: 300,
-      });
-      tocbot.init({
-        tocSelector: '.toc-list',
-        contentSelector: '.post-content',
-        headingSelector: 'h2, h3',
-        hasInnerContainers: true,
+  tocbot.init({
+    tocSelector: '.toc-list',
+    contentSelector: '.post-content',
+    headingSelector: 'h2, h3',
+    hasInnerContainers: true,
         scrollSmoothOffset: -60, // ヘッダーの高さを考慮
         scrollSmooth: true,
         scrollSmoothDuration: 300
